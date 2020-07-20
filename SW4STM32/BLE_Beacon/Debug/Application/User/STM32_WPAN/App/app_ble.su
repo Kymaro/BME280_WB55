@@ -1,0 +1,12 @@
+app_ble.c:399:13:Beacon_Update	0	static,ignoring_inline_asm
+app_ble.c:505:13:BLE_UserEvtRx	8	static
+app_ble.c:523:13:BLE_StatusNot	0	static
+app_ble.c:127:6:APP_BLE_Init	88	static
+app_ble.c:219:28:SVCCTL_App_Notification	0	static
+app_ble.c:280:6:APP_BLE_Key_Button1_Action	0	static
+app_ble.c:285:6:APP_BLE_Key_Button2_Action	0	static
+app_ble.c:290:6:APP_BLE_Key_Button3_Action	0	static
+app_ble.c:487:6:hci_notify_asynch_evt	0	static
+app_ble.c:493:6:hci_cmd_resp_release	0	static
+app_ble.c:499:6:hci_cmd_resp_wait	0	static
+app_ble.c:554:6:SVCCTL_ResumeUserEventFlow	0	static

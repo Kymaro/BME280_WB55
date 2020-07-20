@@ -1,0 +1,2 @@
+eddystone_uid_service.c:36:12:EddystoneUID_Init	80	static
+eddystone_uid_service.c:130:6:EddystoneUID_Process	40	static

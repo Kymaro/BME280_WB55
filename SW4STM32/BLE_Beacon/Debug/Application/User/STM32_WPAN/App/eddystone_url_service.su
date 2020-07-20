@@ -1,0 +1,2 @@
+eddystone_url_service.c:37:12:EddystoneURL_Init	88	static
+eddystone_url_service.c:136:6:EddystoneURL_Process	32	static

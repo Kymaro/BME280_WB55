@@ -1,0 +1,8 @@
+stm32wbxx_ll_bus.h:508:22:LL_AHB2_GRP1_EnableClock	8	static
+stm32wbxx_hal_msp.c:67:6:HAL_MspInit	8	static
+stm32wbxx_hal_msp.c:88:6:HAL_I2C_MspInit	32	static
+stm32wbxx_hal_msp.c:124:6:HAL_I2C_MspDeInit	0	static
+stm32wbxx_hal_msp.c:153:6:HAL_UART_MspInit	64	static
+stm32wbxx_hal_msp.c:283:6:HAL_UART_MspDeInit	8	static
+stm32wbxx_hal_msp.c:344:6:HAL_RTC_MspInit	16	static
+stm32wbxx_hal_msp.c:375:6:HAL_RTC_MspDeInit	0	static
