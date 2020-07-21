@@ -134,7 +134,7 @@
 #define CFG_EDDYSTONE_TLM_BEACON_TYPE   (1<<2)
 #define CFG_IBEACON                     (1<<3)
 
-#define CFG_BEACON_TYPE                 (CFG_IBEACON)
+#define CFG_BEACON_TYPE                 (CFG_EDDYSTONE_TLM_BEACON_TYPE)
 
 #define OTA_BEACON_DATA_ADDRESS         FLASH_BASE + 0x6000
 #define OFFSET_PAYLOAD_LENGTH           9

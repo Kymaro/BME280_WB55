@@ -26,6 +26,10 @@
 #include "eddystone_tlm_service.h"
 
 /* Exported types ------------------------------------------------------------*/
+uint16_t TEMP = 0;
+uint16_t VOLTAGE = 1337;
+uint32_t COMPTEUR = 0;
+
 typedef struct
 {
   uint16_t AdvertisingInterval;/*!< Specifies the desired advertising interval. */
@@ -322,7 +326,7 @@ void EddystoneTLM_Process(void)
   EddystoneTLM_InitStruct.AdvertisingInterval = ADVERTISING_INTERVAL_IN_MS;
   EddystoneTLM_InitStruct.TLM_Version       = 0;
   EddystoneTLM_InitStruct.BatteryVoltage = 3000;
-  EddystoneTLM_InitStruct.BeaconTemperature = 10000;
+  EddystoneTLM_InitStruct.BeaconTemperature = 1337;
   EddystoneTLM_InitStruct.Uptime = 2000000;
   EddystoneTLM_InitStruct.AdvertisingCount = 3000000;
 
@@ -404,10 +408,10 @@ void EddystoneTLM_Process(void)
 
     EddystoneTLM_InitStruct.AdvertisingInterval = ADVERTISING_INTERVAL_IN_MS;
     EddystoneTLM_InitStruct.TLM_Version         = 0;
-    EddystoneTLM_InitStruct.BatteryVoltage      = 3000;
-    EddystoneTLM_InitStruct.BeaconTemperature   = 10000;
+    EddystoneTLM_InitStruct.BatteryVoltage      = VOLTAGE;
+    EddystoneTLM_InitStruct.BeaconTemperature   = TEMP;
     EddystoneTLM_InitStruct.Uptime              = 2000000;
-    EddystoneTLM_InitStruct.AdvertisingCount    = 3000000;
+    EddystoneTLM_InitStruct.AdvertisingCount    = COMPTEUR;
 
     EddystoneUID_InitStruct.AdvertisingInterval = ADVERTISING_INTERVAL_IN_MS;
     EddystoneUID_InitStruct.CalibratedTxPower   = CALIBRATED_TX_POWER_AT_0_M;

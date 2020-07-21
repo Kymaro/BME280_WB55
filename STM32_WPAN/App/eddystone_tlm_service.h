@@ -20,6 +20,10 @@
 #ifndef EDDYSTONE_TLM_SERVICE_H
 #define EDDYSTONE_TLM_SERVICE_H
 
+//uint16_t TEMP = 0;
+//uint16_t VOLTAGE = 1337;
+//uint32_t COMPTEUR = 0;
+
 #ifdef __cplusplus
 extern "C" 
 {

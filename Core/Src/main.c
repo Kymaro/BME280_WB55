@@ -104,11 +104,6 @@ int8_t user_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void *in
 int8_t user_i2c_write(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void *intf_ptr);
 /* USER CODE END PFP */
 
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
 /**
   * @brief  The application entry point.
   * @retval int
@@ -117,6 +112,10 @@ int8_t user_i2c_write(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void *i
 struct bme280_dev dev;
 int8_t rslt = BME280_OK;
 uint8_t dev_addr = BME280_I2C_ADDR_PRIM;
+
+extern uint16_t TEMP;
+extern uint16_t VOLTAGE;
+extern uint32_t COMPTEUR;
 
 int main(void)
 {
@@ -155,7 +154,7 @@ int main(void)
 
   /* Init code for STM32_WPAN */
   APPE_Init();
-
+/*
   HAL_Delay(2000);
   dev.intf_ptr = &dev_addr;
   dev.intf = BME280_I2C_INTF;
@@ -164,14 +163,19 @@ int main(void)
   dev.delay_us = user_delay_ms;
 
   rslt = bme280_init(&dev);
-
+*/
+  TEMP = 1337;
+  VOLTAGE = 2000;
 	while(1)
 	{
-		BSP_LED_On(LED2);
-		HAL_Delay(1000);
-		BSP_LED_Off(LED2);
-		HAL_Delay(1000);
-		//UTIL_SEQ_Run( UTIL_SEQ_DEFAULT );
+
+		//BSP_LED_On(LED2);
+		//HAL_Delay(1000);
+		//BSP_LED_Off(LED2);
+		//HAL_Delay(1000);
+		UTIL_SEQ_Run( UTIL_SEQ_DEFAULT );
+		COMPTEUR++;
+
 	}
 }
 
@@ -728,7 +732,7 @@ int8_t user_i2c_read(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void *in
      * | Stop       | -                   |
      * |------------+---------------------|
      */
-    while(HAL_I2C_Master_Transmit(&hi2c3, (uint16_t)BME280_I2C_ADDR_PRIM, (uint8_t*)reg_addr, len, 1000)!= HAL_OK)
+    while(HAL_I2C_Master_Transmit(&hi2c3, (uint16_t)BME280_I2C_ADDR_PRIM, (uint8_t*)&reg_addr, len, 1000)!= HAL_OK)
     {
       /* Error_Handler() function is called when Timeout error occurs.
          When Acknowledge failure occurs (Slave don't acknowledge its address)
@@ -774,7 +778,7 @@ int8_t user_i2c_write(uint8_t reg_addr, uint8_t *reg_data, uint32_t len, void *i
      * | Stop       | -                   |
      * |------------+---------------------|
      */
-    while(HAL_I2C_Master_Transmit(&hi2c3, (uint16_t)BME280_I2C_ADDR_PRIM, (uint8_t*)reg_addr, len, 1000)!= HAL_OK)
+    while(HAL_I2C_Master_Transmit(&hi2c3, (uint16_t)BME280_I2C_ADDR_PRIM, (uint8_t*)&reg_addr, len, 1000)!= HAL_OK)
     {
       /* Error_Handler() function is called when Timeout error occurs.
          When Acknowledge failure occurs (Slave don't acknowledge its address)

@@ -1,2 +1,2 @@
-eddystone_tlm_service.c:144:13:EddystoneTLM	88	static
-eddystone_tlm_service.c:305:6:EddystoneTLM_Process	120	static
+eddystone_tlm_service.c:148:13:EddystoneTLM	88	static
+eddystone_tlm_service.c:309:6:EddystoneTLM_Process	120	static
